@@ -29,39 +29,77 @@ string carte::get_sorte()
 ostream& operator<< (ostream &os, carte &card)
 {
     //os<<card.valeur<<card.sorte<<" " ;
-os << "╔═════════╗" << endl;
-os << "║ ";
-if(card.valeur == 1)
-    os << "A" << "       ";
-else if (card.valeur < 10 && card.valeur!=1)
-    os << card.valeur << "       ";
-else if(card.valeur ==10)
-    os<< card.valeur << "      ";
-else if (card.valeur == 11) {
-    os << "J" << "       ";
-} else if (card.valeur == 12) {
-    os << "Q" << "       ";
-} else if (card.valeur == 13) {
-    os << "K" << "       ";
-}
-os << "║" << endl;
-os << "║         ║" << endl;
-os << "║    " << card.sorte << "    ║" << endl;
-os << "║         ║" << endl;
-os << "║       ";
-if(card.valeur == 1)
-    os << "A" << " ";        
-else if (card.valeur < 10 && card.valeur!=1) 
-    os << card.valeur << " ";
-else if (card.valeur==10)
-    os<< card.valeur;
-else if (card.valeur == 11) 
-    os << "J" << " ";
-else if (card.valeur == 12) 
-    os << "Q" << " ";
-else if (card.valeur == 13) 
-    os << "K" << " ";
-os << "║" << endl;
-os << "╚═════════╝" << endl;
-return os;
+    /*Affichage pour linux*/
+// os << "╔═════════╗" << endl;
+// os << "║ ";
+// if(card.valeur == 1)
+//     os << "A" << "       ";
+// else if (card.valeur < 10 && card.valeur!=1)
+//     os << card.valeur << "       ";
+// else if(card.valeur ==10)
+//     os<< card.valeur << "      ";
+// else if (card.valeur == 11) {
+//     os << "J" << "       ";
+// } else if (card.valeur == 12) {
+//     os << "Q" << "       ";
+// } else if (card.valeur == 13) {
+//     os << "K" << "       ";
+// }
+// os << "║" << endl;
+// os << "║         ║" << endl;
+// os << "║    " << card.sorte << "    ║" << endl;
+// os << "║         ║" << endl;
+// os << "║       ";
+// if(card.valeur == 1)
+//     os << "A" << " ";        
+// else if (card.valeur < 10 && card.valeur!=1) 
+//     os << card.valeur << " ";
+// else if (card.valeur==10)
+//     os<< card.valeur;
+// else if (card.valeur == 11) 
+//     os << "J" << " ";
+// else if (card.valeur == 12) 
+//     os << "Q" << " ";
+// else if (card.valeur == 13) 
+//     os << "K" << " ";
+// os << "║" << endl;
+// os << "╚═════════╝" << endl;
+// return os;
+/*Affichage dans Powershell*/
+os << " _______ " << endl;
+    os << "|       |" << endl;
+    os << "| ";
+    
+    if (card.valeur == 1)
+        os << "A";
+    else if (card.valeur == 11)
+        os << "J";
+    else if (card.valeur == 12)
+        os << "Q";
+    else if (card.valeur == 13)
+        os << "K";
+    else
+        os << card.valeur;
+    
+    os << "     |" << endl;
+    os << "|       |" << endl;
+    os << "|   " << card.sorte << "   |" << endl;
+    os << "|       |" << endl;
+    os << "| ";
+    
+    if (card.valeur == 1)
+        os << "A";
+    else if (card.valeur == 11)
+        os << "J";
+    else if (card.valeur == 12)
+        os << "Q";
+    else if (card.valeur == 13)
+        os << "K";
+    else
+        os << card.valeur;
+    
+    os << "     |" << endl;
+    os << "|_______|" << endl;
+
+    return os;
 }
